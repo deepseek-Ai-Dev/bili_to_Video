@@ -1,0 +1,18 @@
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+.kotlin
+.idea/
+*.iws
+*.iml
+*.ipr
+build/
+.vscode/
+.DS_Store
+# 自定义规则（防大文件）
+mp4/
+*.mp4
+*.mp3
+*.exe
+src/main/resources/ffmpeg/
