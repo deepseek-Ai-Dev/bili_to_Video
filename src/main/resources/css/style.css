@@ -1,0 +1,188 @@
+/* =========================================================
+   Bili to Video - Fluent Design 自定义样式
+   基于 AtlantaFX 的 CSS 变量进行覆盖
+   ========================================================= */
+
+/* ============ 全局字体 ============ */
+.root {
+    -fx-font-family: "Segoe UI Variable", "Segoe UI", "Inter",
+    "Microsoft YaHei UI", "PingFang SC", sans-serif;
+    -fx-font-size: 13px;
+    -fx-font-smoothing-type: lcd;
+}
+
+.root-pane {
+    -fx-background-color: -color-bg-default;
+}
+
+/* ============ 顶部标题栏 ============ */
+.title-bar {
+    -fx-background-color: linear-gradient(to right,
+    -color-accent-subtle 0%,
+    -color-bg-default 60%);
+    -fx-border-color: transparent transparent -color-border-muted transparent;
+    -fx-border-width: 0 0 1 0;
+}
+
+.logo-badge {
+    -fx-background-color: linear-gradient(to bottom right, #00a1d6, #0083b0);
+    -fx-background-radius: 12;
+    -fx-min-width: 40; -fx-min-height: 40;
+    -fx-max-width: 40; -fx-max-height: 40;
+    -fx-effect: dropshadow(gaussian, rgba(0, 161, 214, 0.45), 14, 0.25, 0, 4);
+}
+
+.app-title {
+    -fx-font-size: 17px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-fg-default;
+}
+
+.app-subtitle {
+    -fx-font-size: 11.5px;
+    -fx-text-fill: -color-fg-muted;
+}
+
+/* ============ 内容滚动区 ============ */
+.content-scroll,
+.content-scroll > .viewport {
+    -fx-background-color: transparent;
+}
+.video-grid {
+    -fx-background-color: transparent;
+}
+
+/* ============ 视频卡片 ============ */
+.video-card {
+    -fx-background-color: -color-bg-subtle;
+    -fx-background-radius: 12;
+    -fx-padding: 10;
+    -fx-border-color: -color-border-muted;
+    -fx-border-radius: 12;
+    -fx-border-width: 1;
+    -fx-effect: dropshadow(gaussian, rgba(0, 0, 0, 0.10), 12, 0.12, 0, 3);
+    -fx-cursor: hand;
+}
+.video-card:hover {
+    -fx-border-color: -color-accent-muted;
+    -fx-effect: dropshadow(gaussian, rgba(0, 161, 214, 0.25), 18, 0.18, 0, 5);
+}
+.card-title {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-fg-default;
+    -fx-wrap-text: true;
+    -fx-alignment: center;
+}
+
+/* ============ 输入框 ============ */
+.path-field {
+    -fx-background-color: -color-bg-default;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-border-color: -color-border-default;
+    -fx-border-width: 1;
+    -fx-padding: 9 12 9 12;
+    -fx-text-fill: -color-fg-default;
+    -fx-prompt-text-fill: -color-fg-subtle;
+}
+.path-field:focused {
+    -fx-border-color: -color-accent-emphasis;
+    -fx-effect: dropshadow(gaussian, rgba(0, 161, 214, 0.35), 10, 0.4, 0, 0);
+}
+
+/* ============ 按钮 ============ */
+.btn-primary {
+    -fx-background-color: linear-gradient(to bottom, #00a1d6, #0083b0);
+    -fx-background-radius: 8;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 22 10 22;
+    -fx-cursor: hand;
+    -fx-effect: dropshadow(gaussian, rgba(0, 161, 214, 0.4), 12, 0.25, 0, 3);
+}
+.btn-primary:hover {
+    -fx-background-color: linear-gradient(to bottom, #00b5eb, #0094c7);
+    -fx-effect: dropshadow(gaussian, rgba(0, 161, 214, 0.65), 16, 0.35, 0, 5);
+}
+.btn-primary:pressed {
+    -fx-background-color: linear-gradient(to bottom, #0077a3, #006a91);
+    -fx-effect: dropshadow(gaussian, rgba(0, 161, 214, 0.25), 6, 0.1, 0, 1);
+}
+.btn-ghost {
+    -fx-background-color: transparent;
+    -fx-text-fill: -color-accent-fg;
+    -fx-padding: 9 18 9 18;
+    -fx-background-radius: 8;
+    -fx-cursor: hand;
+}
+.btn-ghost:hover {
+    -fx-background-color: -color-accent-subtle;
+}
+
+/* ============ 进度条 ============ */
+.progress { -fx-pref-height: 8; }
+.progress > .track {
+    -fx-background-color: -color-bg-inset;
+    -fx-background-radius: 4;
+}
+.progress > .bar {
+    -fx-background-color: linear-gradient(to right, #00a1d6, #00d4ff);
+    -fx-background-radius: 4;
+    -fx-padding: 4;
+}
+
+/* ============ 单行打字机日志 ============ */
+.log-text {
+    -fx-font-family: "Cascadia Code", "JetBrains Mono", "Consolas", monospace;
+    -fx-font-size: 12px;
+    -fx-text-fill: -color-fg-muted;
+    -fx-padding: 0 10 0 10;
+}
+
+/* ============ 状态标签 ============ */
+.status-label {
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-text-fill: -color-accent-fg;
+}
+
+/* ============ 主题切换 ============ */
+.theme-toggle {
+    -fx-background-color: -color-bg-default;
+    -fx-background-radius: 20;
+    -fx-border-color: -color-border-default;
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+    -fx-padding: 6 14 6 14;
+    -fx-text-fill: -color-fg-default;
+    -fx-cursor: hand;
+}
+.theme-toggle:hover {
+    -fx-border-color: -color-accent-muted;
+    -fx-background-color: -color-accent-subtle;
+}
+.theme-toggle:selected {
+    -fx-background-color: -color-accent-emphasis;
+    -fx-text-fill: -color-fg-on-emphasis;
+}
+
+/* ============ 队列徽章 ============ */
+.queue-badge {
+    -fx-background-color: -color-accent-subtle;
+    -fx-text-fill: -color-accent-fg;
+    -fx-background-radius: 10;
+    -fx-padding: 3 10 3 10;
+    -fx-font-size: 11.5px;
+    -fx-font-weight: bold;
+}
+
+/* ============ 分P徽章 ============ */
+.parts-badge {
+    -fx-background-color: rgba(0, 161, 214, 0.15);
+    -fx-text-fill: #00a1d6;
+    -fx-background-radius: 8;
+    -fx-padding: 2 8 2 8;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}

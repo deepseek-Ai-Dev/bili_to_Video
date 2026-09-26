@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx" xmlns:fx="http://javafx.com/fxml"
+            styleClass="root-pane">
+    <top>
+        <HBox alignment="CENTER_LEFT" spacing="15" styleClass="title-bar">
+            <padding><Insets top="15" right="20" bottom="15" left="20"/></padding>
+            <Region styleClass="logo-badge"/>
+            <VBox alignment="CENTER_LEFT" spacing="2">
+                <Label text="BiliToVideo" styleClass="app-title"/>
+                <Label text="B站缓存视频转 MP4 工具" styleClass="app-subtitle"/>
+            </VBox>
+            <Region HBox.hgrow="ALWAYS"/>
+            <ToggleButton fx:id="themeToggle" text="🌙 暗色" styleClass="theme-toggle"/>
+        </HBox>
+    </top>
+
+    <center>
+        <VBox spacing="15">
+            <padding><Insets top="20" right="20" bottom="20" left="20"/></padding>
+
+            <!-- 输入路径 -->
+            <HBox spacing="10" alignment="CENTER_LEFT">
+                <TextField fx:id="inputPathField" promptText="请选择B站缓存视频根目录..." styleClass="path-field" HBox.hgrow="ALWAYS"/>
+                <Button text="选择目录" onAction="#onChooseInput" styleClass="btn-primary"/>
+                <Button text="刷新" onAction="#onRefresh" styleClass="btn-ghost"/>
+            </HBox>
+
+            <!-- 视频展示网格 -->
+            <ScrollPane fx:id="contentScroll" fitToWidth="true" styleClass="content-scroll" hbarPolicy="NEVER" VBox.vgrow="ALWAYS">
+                <FlowPane fx:id="videoGrid" hgap="20" vgap="20" styleClass="video-grid">
+                    <padding><Insets top="10" right="10" bottom="10" left="10"/></padding>
+                </FlowPane>
+            </ScrollPane>
+        </VBox>
+    </center>
+
+    <bottom>
+        <VBox spacing="10">
+            <padding><Insets top="10" right="20" bottom="15" left="20"/></padding>
+            <ProgressBar fx:id="progressBar" progress="0" maxWidth="Infinity" styleClass="progress"/>
+            <HBox spacing="15" alignment="CENTER_LEFT">
+                <Label fx:id="statusLabel" text="就绪" styleClass="status-label"/>
+                <Label fx:id="queueCountLabel" text="队列: 0" styleClass="queue-badge"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Label fx:id="logLabel" text="" styleClass="log-text" maxWidth="500" textOverrun="ELLIPSIS"/>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button text="清空队列" onAction="#onClearQueue" styleClass="btn-ghost"/>
+                <Button text="打开输出文件夹" onAction="#onOpenOutput" styleClass="btn-ghost"/>
+            </HBox>
+        </VBox>
+    </bottom>
+</BorderPane>
